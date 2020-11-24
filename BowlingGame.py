@@ -82,4 +82,4 @@ class BowlingGameTests(unittest.TestCase):
         self.assertEqual(game.score, 22)
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=)
