@@ -11,7 +11,7 @@ class BowlingGame(object):
     """
 
     def __init__(self):
-        """The initial constructor, where internal variable are assigned
+        """The initial constructor, where the internal variables 'throws' and 'score' are assigned
         """
 
         self.throws = []
@@ -42,3 +42,4 @@ class BowlingGame(object):
             else: # a standard throw
                 self.score += self.throws[ball] + self.throws[ball + 1]
                 ball += 2
+
