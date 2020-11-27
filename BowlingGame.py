@@ -30,15 +30,15 @@ class BowlingGame(object):
         """Where each throw in the list of throws is assessed to calculate the final score, 
         allowing for the complicated scoring rules of bowling.
         """
-        
+
         ball = 0
-        for frames in range(10):
-            if self.throws[ball]==10:
+        for _ in range(10):
+            if self.throws[ball]==10: # a strike is awarded
                 self.score +=10 + self.throws[ball+1] + self.throws[ball +2]
                 ball += 1
-            elif self.throws[ball] + self.throws[ball+1] == 10:
+            elif self.throws[ball] + self.throws[ball+1] == 10: # a spare is awarded
                 self.score += 10 + self.throws [ball +2]
                 ball +=2
-            else:
+            else: # a standard throw
                 self.score += self.throws[ball] + self.throws[ball + 1]
                 ball += 2
