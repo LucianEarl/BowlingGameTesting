@@ -1,5 +1,5 @@
-# Bowling Game Unit Testing
-# Original Author Unknown
+# Bowling Game - Unit Testing
+# Original Author unknown
 # Revisions and additional tests by Lucian
 # 27/11/2020
 
@@ -110,7 +110,7 @@ class BowlingGameTests(unittest.TestCase):
     def test_successive_strikes(self):
         """test for successive strikes calculating, as shown in the brief
         """
-        
+
         game=BowlingGame()
         game.throw(10)
         game.throw(10)
@@ -119,6 +119,31 @@ class BowlingGameTests(unittest.TestCase):
         self.throw_many(game, 16, 0)
         game.calculate_score()
         self.assertEqual(game.score, 46)
+
+    def test_sample_game(self):
+        """testing an example game, with a mix of open frames, spares and strikes
+        """
+        game=BowlingGame()
+        game.throw(10)
+        game.throw(7)
+        game.throw(3)
+        game.throw(7)
+        game.throw(2)
+        game.throw(9)
+        game.throw(1)
+        game.throw(10)
+        game.throw(10)
+        game.throw(10)
+        game.throw(2)
+        game.throw(3)
+        game.throw(6)
+        game.throw(4)
+        game.throw(7)
+        game.throw(3)
+        game.throw(3)
+        game.calculate_score()
+        self.assertEqual(game.score, 168)
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

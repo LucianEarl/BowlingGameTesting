@@ -1,5 +1,5 @@
 # Bowling Game
-# Original author Unknown
+# Original author unknown
 # Testing and revisions by Lucian
 # 27/11/2020
 
