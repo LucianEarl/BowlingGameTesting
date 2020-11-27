@@ -21,7 +21,7 @@ class BowlingGameTests(unittest.TestCase):
             number_of_times (int): How many throws were made
             pins (int): How many pins were knocked over in the throw
         """
-        
+
         for _ in range(number_of_times):
             game.throw(pins)
 
@@ -94,6 +94,31 @@ class BowlingGameTests(unittest.TestCase):
         self.throw_many(game, 17,0)
         game.calculate_score()
         self.assertEqual(game.score, 22)
+
+    def test_strike_brief(self):
+        """test another configuration that would grant a strike, as shown in the brief
+        """
+
+        game=BowlingGame()
+        game.throw(10)
+        game.throw(3)
+        game.throw(6)
+        self.throw_many(game, 17, 0)
+        game.calculate_score()
+        self.assertEqual(game.score, 28)
+
+    def test_successive_strikes(self):
+        """test for successive strikes calculating, as shown in the brief
+        """
+        
+        game=BowlingGame()
+        game.throw(10)
+        game.throw(10)
+        game.throw(4)
+        game.throw(2)
+        self.throw_many(game, 16, 0)
+        game.calculate_score()
+        self.assertEqual(game.score, 46)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
